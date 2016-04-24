@@ -7,11 +7,7 @@ A node.js module to standardize communication with the mqtt server
 
 ### devices/\<deviceID>
 Each device conneced has a unique ID assigned in code/firmware
-
-### devices/\<deviceID>/name
-Device name.
-* Should be set by device on first connection, if not already set
-* Should be retained
+* The payload may be used to set a human-readable name. If so, this should be set only on first device start or if empty, and should be retained
 
 ### devices/\<deviceID>/status
 Current device status. Usually "online" or "offline".
