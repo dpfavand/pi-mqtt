@@ -14,6 +14,12 @@ Current device status. Usually "online" or "offline".
 * Should be retained
 * Should be set to "offline" by MQTT Last Will
 
+### devices/\<deviceID>/status/localIP
+Last known local network IP address. Used so administrator can connect to device if needed.
+* Only useful if other devices/services are expected to connect to this device
+* Should be retained
+* Should be set at each device startup
+
 ### devices/\<deviceID>/config/\<configTopics>
 Device-specific configuration topics
 * If any required configuration is not set, the device should use internal defaults, but should not update the missing topic.
@@ -33,5 +39,7 @@ The actual sensor data. Depending on how this is organized, there may be subtopi
 * Use to report actual values. A properly authenticated system will only allow the sensor to write to these. Use config topics to set desired values
 
 `devices/<deviceID>/<sensorSet>/temperature`
+
 `devices/<deviceID>/<sensorSet>/presence/daniel`
+
 `devices/<deviceID>/<sensorSet>/presence/sarah`
